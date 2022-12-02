@@ -1,7 +1,7 @@
 {
   "name": "laravel-listing",
-  "version": "1.0.0",
-  "description": "Laravel Listing",
+  "version": "1.0.1",
+  "description": "Provides a class to build list response for @wyxos/vue-3-helpers",
   "main": "release.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

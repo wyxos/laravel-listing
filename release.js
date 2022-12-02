@@ -5,7 +5,7 @@
 
     // read package.json
     // get version
-    const currentVersion = execSync('git describe --tags --abbrev=0').toString()
+    const currentVersion = require('./package.json').version
 
     // prompt user for version
     prompt.start()
