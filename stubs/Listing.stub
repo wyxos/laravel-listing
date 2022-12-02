@@ -1,0 +1,19 @@
+<?php
+
+namespace $namespace;
+
+use Illuminate\Database\Eloquent\Builder;
+use $use;
+
+class $className extends WyxosListing
+{
+    public function query(): Builder
+    {
+        // return \App\Models\User::query();
+    }
+
+    public function filters($base)
+    {
+
+    }
+}
