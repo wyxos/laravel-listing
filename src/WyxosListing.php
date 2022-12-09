@@ -3,6 +3,7 @@
 namespace Wyxos\LaravelListing;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 abstract class WyxosListing
@@ -33,13 +34,23 @@ abstract class WyxosListing
 
         $pagination = $base->latest()->paginate($this->perPage(), ['*'], null, $page);
 
-        return [
+        return $this->merge([
             'query' => [
-                'items' => $pagination->items(),
+                'items' => $this->format($pagination->items()),
                 'total' => $pagination->total(),
                 'perPage' => $this->perPage()
             ]
-        ];
+        ], ...$this->data());
+    }
+
+    public function format(Collection $items): Collection
+    {
+        return $items;
+    }
+
+    public function data(): array
+    {
+        return [];
     }
 
     public static function get()

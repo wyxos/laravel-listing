@@ -16,4 +16,14 @@ class $className extends WyxosListing
     {
 
     }
+
+//    public function format(Collection $items): Collection
+//    {
+//        return $items;
+//    }
+
+//    public function data(): array
+//    {
+//        return [];
+//    }
 }
