@@ -34,18 +34,30 @@ abstract class WyxosListing
 
         $pagination = $base->latest()->paginate($this->perPage(), ['*'], null, $page);
 
-        return $this->merge([
+        $query = [
             'query' => [
                 'items' => $this->format($pagination->items()),
                 'total' => $pagination->total(),
                 'perPage' => $this->perPage()
             ]
-        ], ...$this->data());
+        ];
+
+        return [
+            ...$query,
+            ...$this->data()
+        ];
     }
 
     public function format(Collection $items): Collection
     {
         return $items;
+    }
+
+    protected function merge($query, $data)
+    {
+        return [
+
+        ]
     }
 
     public function data(): array
