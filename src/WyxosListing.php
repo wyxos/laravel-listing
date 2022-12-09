@@ -53,13 +53,6 @@ abstract class WyxosListing
         return $items;
     }
 
-    protected function merge($query, $data)
-    {
-        return [
-
-        ]
-    }
-
     public function data(): array
     {
         return [];
