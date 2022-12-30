@@ -49,7 +49,7 @@ abstract class WyxosListing
         ];
     }
 
-    public function format(array|Model $item): array|Model
+    public function format($item)
     {
         return $item;
     }
