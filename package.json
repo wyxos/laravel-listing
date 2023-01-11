@@ -1,6 +1,6 @@
 {
   "name": "laravel-listing",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Provides a class to build list response for @wyxos/vue-3-helpers",
   "main": "release.js",
   "scripts": {
