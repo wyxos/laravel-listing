@@ -18,7 +18,7 @@ abstract class WyxosListing
 
     abstract public function query();
 
-    abstract public function filters(Builder $base);
+    abstract public function filters(Builder|\Laravel\Scout\Builder $base);
 
     public function perPage()
     {
@@ -33,7 +33,7 @@ abstract class WyxosListing
 
         $this->filters($base);
 
-        $pagination = $base->latest()->paginate($this->perPage(), ['*'], null, $page);
+        $pagination = $base->paginate($this->perPage(), ['*'], null, $page);
 
         $query = [
             'query' => [
