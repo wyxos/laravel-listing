@@ -35,6 +35,8 @@ abstract class WyxosListing
 
         $pagination = $base->paginate($this->perPage(), ['*'], null, $page);
 
+        $this->load($pagination);
+
         $query = [
             'query' => [
                 'items' => collect($pagination->items())->map(fn($item) => $this->format($item)),
@@ -57,6 +59,11 @@ abstract class WyxosListing
     public function data(): array
     {
         return [];
+    }
+
+    public function load($base)
+    {
+        
     }
 
     public static function get()
