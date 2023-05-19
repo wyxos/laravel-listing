@@ -43,7 +43,8 @@ abstract class WyxosListing
             'query' => [
                 'items' => $items,
                 'total' => $pagination->total(),
-                'perPage' => $this->perPage()
+                'perPage' => $this->perPage(),
+                'showing' => ($pagination->perPage() * ($pagination->currentPage() - 1)) + $pagination->count()
             ]
         ];
 
